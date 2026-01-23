@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Srirajavadivel Singar - Full-Stack Developer & Automation Enthusiast. Building modern web applications with clean code and creative solutions.">
+    <meta name="keywords"
+        content="Full-Stack Developer, Web Developer, FastAPI, Python, JavaScript, PostgreSQL, Zoho CRM, Portfolio">
+    <meta name="author" content="Srirajavadivel Singar">
+    <title>Srirajavadivel Singar – Interactive Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero-profile.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Animated Noise -->
+    <div class="noise-overlay"></div>
+
+    <!-- Animated Gradient Background -->
+    <div class="animated-gradient-bg"></div>
+
+    <!-- Orbital Navigation -->
+    <nav class="orbital-nav">
+        <a href="#hero" class="nav-orb" title="Home">
+            <span>🏠</span>
+        </a>
+        <a href="#about" class="nav-orb" title="About">
+            <span>👤</span>
+        </a>
+        <a href="#skills" class="nav-orb" title="Skills">
+            <span>💻</span>
+        </a>
+        <a href="#projects" class="nav-orb" title="Projects">
+            <span>🚀</span>
+        </a>
+        <a href="#education" class="nav-orb" title="Education">
+            <span>🎓</span>
+        </a>
+        <a href="#contact" class="nav-orb" title="Contact">
+            <span>📧</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero cinematic">
+        <div class="hero-bg-image"></div>
+        <div class="hero-lighting-overlay"></div>
+
+        <div class="hero-content asymmetric">
+            <div class="hero-header-top" data-aos="fade-down">
+                <span class="tech-tag">Full-Stack Engineering</span>
+            </div>
+
+            <div class="hero-main-title">
+                <div class="hero-title-group">
+                    <div class="hero-profile-container" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="about-image holographic-card">
+                            <img src="profile.jpg" alt="Srirajavadivel Singar">
+                            <div class="holographic-overlay"></div>
+                        </div>
+                    </div>
+                    <h1 class="hero-name-huge" data-aos="fade-up">
+                        <span class="glitch-text" data-text="SRIRAJA">SRIRAJA</span><br>
+                        <span class="vibrant-text" data-aos="fade-up" data-aos-delay="200">VADIVEL</span>
+                    </h1>
+                </div>
+                <div class="hero-subtext" data-aos="fade-up" data-aos-delay="400">
+                    <p class="design-label">DESIGNING FOR DIGITAL IMPACT</p>
+                    <p class="hero-title-thin">Creative Developer & Automation Strategist</p>
+                </div>
+            </div>
+
+            <div class="hero-footer-actions" data-aos="fade-up" data-aos-delay="600">
+                <div class="action-grid">
+                    <a href="#projects" class="action-item magnetic">
+                        <span class="action-num">01</span>
+                        <span class="action-label">SELECTED WORKS</span>
+                    </a>
+                    <a href="#contact" class="action-item magnetic">
+                        <span class="action-num">02</span>
+                        <span class="action-label">GET IN TOUCH</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gradient-text">About Me</span>
+            </h2>
+            <div class="about-content">
+                <!-- Profile Image Moved to Hero -->
+                <div class="about-text" data-aos="fade-left">
+                    <div class="about-text-accents"></div>
+                    <div class="tech-line top"></div>
+                    <div class="tech-line bottom"></div>
+                    <p>
+                        I am a <strong>self-driven and passionate developer</strong> with a strong interest in
+                        full-stack web development, backend systems, and workflow automation.
+                    </p>
+                    <p>
+                        I completed my <strong>Diploma in Electrical and Electronics Engineering (EEE)</strong>
+                        from Thiagarajar Polytechnic College, Salem. My engineering background fuels my
+                        logical approach to software development.
+                    </p>
+                    <p>
+                        I enjoy building <strong>simple, functional, and user-friendly applications</strong>.
+                        I continuously improve my skills by exploring new technologies and following best practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gradient-text">Skills & Technologies</span>
+            </h2>
+
+            <div class="terminal-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <div class="terminal-title">skills.py</div>
+                </div>
+                <div class="terminal-body">
+                    <div id="terminal-content"></div>
+                </div>
+            </div>
+
+            <!-- <div class="skill-network" id="skill-network" data-aos="fade-up" data-aos-delay="400">
+                <canvas id="network-canvas"></canvas>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- What I Can Do Section -->
+    <section id="capabilities" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gradient-text">What I Can Do</span>
+            </h2>
+            <div class="capabilities-grid">
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="capability-icon">🌐</div>
+                    <h3>Responsive Websites</h3>
+                    <p>Develop responsive and mobile-friendly websites</p>
+                </div>
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="capability-icon">⚡</div>
+                    <h3>RESTful APIs</h3>
+                    <p>Create RESTful APIs using FastAPI</p>
+                </div>
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="capability-icon">🗄️</div>
+                    <h3>Database Integration</h3>
+                    <p>Design and integrate PostgreSQL databases</p>
+                </div>
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="capability-icon">🎨</div>
+                    <h3>Modern UI Design</h3>
+                    <p>Design clean and modern UI layouts</p>
+                </div>
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="capability-icon">📱</div>
+                    <h3>Business Applications</h3>
+                    <p>Build business applications using Zoho Creator</p>
+                </div>
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="capability-icon">🔄</div>
+                    <h3>Workflow Automation</h3>
+                    <p>Automate workflows using Zoho CRM</p>
+                </div>
+                <div class="capability-card magnetic" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="capability-icon">✨</div>
+                    <h3>Clean Code</h3>
+                    <p>Write clean, readable, and maintainable code</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gradient-text">Featured Projects</span>
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card isometric" data-aos="flip-left" data-aos-delay="0">
+                    <div class="project-content">
+                        <div class="project-icon">🎮</div>
+                        <h3>Personal Portfolio</h3>
+                        <p>An interactive, game-inspired portfolio with anti-gravity physics and cinematic visuals.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card isometric" data-aos="flip-left" data-aos-delay="200">
+                    <div class="project-content">
+                        <div class="project-icon">📔</div>
+                        <h3>Digital Diary</h3>
+                        <p>A sophisticated notes management app with advanced organization and efficient user flow.</p>
+                        <div class="project-tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card isometric" data-aos="flip-left" data-aos-delay="400">
+                    <div class="project-content">
+                        <div class="project-icon">🐾</div>
+                        <h3>Pet Adoption</h3>
+                        <p>A responsive static portal for pet matchmaking with detailed profiles and contact flows.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Strengths Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="education-strengths-wrapper">
+                <!-- Education -->
+                <div class="education-content" data-aos="fade-right">
+                    <h2 class="section-title">
+                        <span class="gradient-text">Education</span>
+                    </h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Diploma in Electrical & Electronics Engineering</h3>
+                                <h4>Thiagarajar Polytechnic College, Salem</h4>
+                                <p>Strong foundation in engineering principles, logical thinking, and problem-solving.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strengths -->
+                <div class="strengths-content" data-aos="fade-left">
+                    <h2 class="section-title">
+                        <span class="gradient-text">Strengths</span>
+                    </h2>
+                    <div class="strengths-orbs">
+                        <div class="strength-orb" data-aos="zoom-in" data-aos-delay="0">
+                            <span>📚 Strong willingness to learn</span>
+                        </div>
+                        <div class="strength-orb" data-aos="zoom-in" data-aos-delay="100">
+                            <span>🧩 Problem-solving mindset</span>
+                        </div>
+                        <div class="strength-orb" data-aos="zoom-in" data-aos-delay="200">
+                            <span>🔍 Attention to detail</span>
+                        </div>
+                        <div class="strength-orb" data-aos="zoom-in" data-aos-delay="300">
+                            <span>🚀 Adaptability to new tech</span>
+                        </div>
+                        <div class="strength-orb" data-aos="zoom-in" data-aos-delay="400">
+                            <span>🧠 Logical thinking</span>
+                        </div>
+                        <div class="strength-orb" data-aos="zoom-in" data-aos-delay="500">
+                            <span>⚙️ System understanding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="certifications-section" data-aos="fade-up">
+                <h2 class="section-title">
+                    <span class="gradient-text">Certifications</span>
+                </h2>
+                <div class="cert-container">
+                    <div class="cert-card holographic-card" data-aos="zoom-in">
+                        <div class="cert-image-container">
+                            <img src="zoho_creator_crt.png" alt="Zoho Creator Business User Certification">
+                            <div class="holographic-overlay"></div>
+                        </div>
+                        <div class="cert-details">
+                            <h3 class="gradient-text">Zoho Creator Business User</h3>
+                            <p>Accredited for proficiency in building custom business applications, automating
+                                workflows, and managing data with Zoho Creator.</p>
+                            <div class="cert-actions">
+                                <a href="Certificate.pdf" target="_blank" class="btn btn-primary magnetic">View Full
+                                    Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="gradient-text">Get In Touch</span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <div class="matrix-text" id="email-matrix">
+                        <a href="mailto:srirajavadivel8@gmail.com" class="magnetic">srirajavadivel8@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/sriraja66" target="_blank" rel="noopener noreferrer" class="magnetic">
+                        github.com/sriraja66
+                    </a>
+                </div>
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/srirajavadivel" target="_blank" rel="noopener noreferrer"
+                        class="magnetic">
+                        linkedin.com/in/srirajavadivel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Srirajavadivel Singar. Crafted with 💜 and ☕</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
