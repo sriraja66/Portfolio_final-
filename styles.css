@@ -578,39 +578,107 @@ body {
     font-family: var(--font-mono);
     font-size: 0.95rem;
     line-height: 1.8;
-    min-height: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center; /* Center the carousel in the same space */
 }
 
-#terminal-content .keyword {
-    color: var(--color-primary);
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+.terminal-typing-carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: terminal-scroll 30s steps(1) infinite;
 }
 
-#terminal-content .string {
-    color: #00FFB3;
-    text-shadow: 0 0 10px rgba(0, 255, 179, 0.4);
+.terminal-line {
+    height: 1.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-#terminal-content .comment {
-    color: var(--color-text-muted);
+/* Syntax Highlighting */
+.terminal-line .keyword { color: var(--color-primary); text-shadow: 0 0 10px rgba(0, 217, 255, 0.5); }
+.terminal-line .string { color: #00FFB3; text-shadow: 0 0 10px rgba(0, 255, 179, 0.4); }
+.terminal-line .comment { color: var(--color-text-muted); font-style: italic; }
+.terminal-line .function { color: #FFBD2E; text-shadow: 0 0 10px rgba(255, 189, 46, 0.3); }
+
+/* Individual Line Animations - 12 lines, 2.5s each = 30s total */
+.terminal-line:nth-child(1) { animation: type-line 1.5s steps(30) 0s forwards; }
+.terminal-line:nth-child(2) { animation: type-line 1.5s steps(20) 2.5s forwards; }
+.terminal-line:nth-child(3) { animation: type-line 2.5s steps(50) 5s forwards; }
+.terminal-line:nth-child(4) { animation: type-line 2.5s steps(50) 7.5s forwards; }
+.terminal-line:nth-child(5) { animation: type-line 2s steps(40) 10s forwards; }
+.terminal-line:nth-child(6) { animation: type-line 1s steps(5) 12.5s forwards; }
+.terminal-line:nth-child(7) { animation: type-line 0.1s steps(1) 15s forwards; } /* Empty line */
+.terminal-line:nth-child(8) { animation: type-line 1.5s steps(35) 17.5s forwards; }
+.terminal-line:nth-child(9) { animation: type-line 1.5s steps(40) 20s forwards; }
+.terminal-line:nth-child(10) { animation: type-line 1.5s steps(35) 22.5s forwards; }
+.terminal-line:nth-child(11) { animation: type-line 0.1s steps(1) 25s forwards; } /* Empty line */
+.terminal-line:nth-child(12) { animation: type-line 1.5s steps(30) 27.5s forwards; }
+
+/* Typing Animation */
+@keyframes type-line {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-.terminal-cursor {
+/* Carousel Scroll Animation */
+@keyframes terminal-scroll {
+    0%, 8.32% { transform: translateY(0); }
+    8.33%, 16.65% { transform: translateY(-1.8rem); }
+    16.66%, 24.99% { transform: translateY(-3.6rem); }
+    25%, 33.32% { transform: translateY(-5.4rem); }
+    33.33%, 41.65% { transform: translateY(-7.2rem); }
+    41.66%, 49.99% { transform: translateY(-9rem); }
+    50%, 58.32% { transform: translateY(-10.8rem); }
+    58.33%, 66.65% { transform: translateY(-12.6rem); }
+    66.66%, 74.99% { transform: translateY(-14.4rem); }
+    75%, 83.32% { transform: translateY(-16.2rem); }
+    83.33%, 91.65% { transform: translateY(-18rem); }
+    91.66%, 99.99% { transform: translateY(-19.8rem); }
+    100% { transform: translateY(0); }
+}
+
+/* Blinking Cursor - Pure CSS */
+.terminal-line::after {
+    content: "";
     display: inline-block;
-    width: 10px;
-    height: 18px;
+    width: 8px;
+    height: 1.2rem;
     background: var(--color-primary);
-    animation: blink 1s step-end infinite;
-    box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+    margin-left: 2px;
+    opacity: 0;
+    box-shadow: 0 0 8px var(--color-primary);
 }
 
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51%, 100% {
-        opacity: 0;
-    }
+/* Cursor logic for active line */
+.terminal-line:nth-child(1)::after { animation: cursor-blink 1s step-end 0s infinite, cursor-show 2.5s step-end 0s forwards; }
+.terminal-line:nth-child(2)::after { animation: cursor-blink 1s step-end 2.5s infinite, cursor-show 2.5s step-end 2.5s forwards; }
+.terminal-line:nth-child(3)::after { animation: cursor-blink 1s step-end 5s infinite, cursor-show 2.5s step-end 5s forwards; }
+.terminal-line:nth-child(4)::after { animation: cursor-blink 1s step-end 7.5s infinite, cursor-show 2.5s step-end 7.5s forwards; }
+.terminal-line:nth-child(5)::after { animation: cursor-blink 1s step-end 10s infinite, cursor-show 2.5s step-end 10s forwards; }
+.terminal-line:nth-child(6)::after { animation: cursor-blink 1s step-end 12.5s infinite, cursor-show 2.5s step-end 12.5s forwards; }
+.terminal-line:nth-child(7)::after { animation: cursor-blink 1s step-end 15s infinite, cursor-show 2.5s step-end 15s forwards; }
+.terminal-line:nth-child(8)::after { animation: cursor-blink 1s step-end 17.5s infinite, cursor-show 2.5s step-end 17.5s forwards; }
+.terminal-line:nth-child(9)::after { animation: cursor-blink 1s step-end 20s infinite, cursor-show 2.5s step-end 20s forwards; }
+.terminal-line:nth-child(10)::after { animation: cursor-blink 1s step-end 22.5s infinite, cursor-show 2.5s step-end 22.5s forwards; }
+.terminal-line:nth-child(11)::after { animation: cursor-blink 1s step-end 25s infinite, cursor-show 2.5s step-end 25s forwards; }
+.terminal-line:nth-child(12)::after { animation: cursor-blink 1s step-end 27.5s infinite, cursor-show 2.5s step-end 27.5s forwards; }
+
+@keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes cursor-show {
+    0%, 99% { visibility: visible; }
+    100% { visibility: hidden; }
 }
 
 /* ====================================
