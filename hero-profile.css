@@ -58,22 +58,26 @@
 /* Cinematic Content Layout */
 .hero.cinematic {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: var(--spacing-xl) 5% var(--spacing-xl) 0;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5% 4rem 5%;
     overflow: hidden;
 }
 
 .hero-content.asymmetric {
-    text-align: left;
+    text-align: center;
     max-width: 1200px;
     width: 100%;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tech-tag {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
     color: var(--color-primary);
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -84,11 +88,12 @@
 
 .hero-title-group {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     width: 100%;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .hero-name-huge {
@@ -119,40 +124,44 @@
 }
 
 .hero-subtext {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
     align-items: center;
+    justify-content: center;
 }
 
 .design-label {
     font-size: 1.2rem;
     font-weight: 800;
-    color: var(--color-text);
-    background: #FF4500; /* Reference Orange */
+    color: #FFFFFF;
+    background: transparent;
     padding: 0.5rem 1rem;
     margin: 0;
     letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .hero-title-thin {
     font-size: 1.1rem;
-    color: var(--color-text-muted);
-    font-weight: 300;
+    color: #FFFFFF;
+    font-weight: 800;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Footer Actions */
 .hero-footer-actions {
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .action-grid {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
+    justify-content: center;
 }
 
 .action-item {
@@ -161,12 +170,14 @@
     gap: 0.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
+    background: #FF4500;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .action-num {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
+    display: none;
 }
 
 .action-label {
@@ -174,17 +185,19 @@
     font-size: 1rem;
     color: var(--color-text);
     letter-spacing: 2px;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 5px;
+    border-bottom: none;
+    padding-bottom: 0px;
+    font-weight: 800;
+}
+
+.action-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
 }
 
 .action-item:hover .action-label {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-}
-
-.action-item:hover .action-num {
-    color: var(--color-primary);
+    color: var(--color-text);
+    border-color: transparent;
 }
 
 /* Responsive Cinematic Adjustments */
@@ -322,7 +335,7 @@
 .about-text {
     flex: 1; /* Take remaining space */
     position: relative;
-    background: #ffffff; /* FORCE WHITE BACKGROUND */
+    background: black; /* FORCE WHITE BACKGROUND */
     backdrop-filter: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 
@@ -332,7 +345,7 @@
     border-radius: 12px;
     text-align: left;
     overflow: hidden; /* Contain the background pseudo-element */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    /* transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease; */
 }
 
 /* Faint Background Image Layer */
@@ -363,7 +376,7 @@
     margin-bottom: 1.8rem;
     line-height: 1.9;
     font-size: 1.15rem;
-    color: #333333; /* Dark Gray for readability */
+    color:white; /* Dark Gray for readability */
     position: relative;
     z-index: 1; /* Stay above the background image */
     padding-left: 1.5rem;
@@ -376,12 +389,12 @@
 }
 
 /* Interactive Text Effect */
-.about-text p:hover {
+/* .about-text p:hover {
     border-left-color: var(--color-cyan);
-    color: #000000; /* Pure Black on hover */
+    color: #000000; 
     padding-left: 2rem;
     background: linear-gradient(90deg, rgba(0, 229, 255, 0.05), transparent);
-}
+} */
 
 .about-text strong {
     color: var(--color-cyan); /* Cyan highlights */
@@ -454,5 +467,33 @@
     /* Move corner accents for mobile */
     .about-text::before, .about-text::after {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero.cinematic {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 6rem;
+    }
+
+    .hero-content.asymmetric {
+        align-items: center;
+    }
+
+    .hero-title-group {
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-profile-container {
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    .hero-name-huge {
+        font-size: clamp(3rem, 10vw, 5rem);
     }
 }

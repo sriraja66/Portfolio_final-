@@ -66,6 +66,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     cursor: default;
 }
 
@@ -159,16 +160,24 @@ body {
     opacity: 0.8;
 }
 
-.glitch-text:hover::before {
+.glitch-text::before {
     animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
     color: var(--color-primary);
     z-index: -1;
 }
 
-.glitch-text:hover::after {
+.glitch-text::after {
     animation: glitch-anim-2 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
     color: var(--color-accent);
     z-index: -2;
+}
+
+.glitch-text:hover::before {
+    color: var(--color-primary);
+}
+
+.glitch-text:hover::after {
+    color: var(--color-accent);
 }
 
 @keyframes glitch-anim {
@@ -321,11 +330,14 @@ body {
 }
 
 .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hueRotate 10s linear infinite;
+    color: #00d9ff;
+    text-shadow: 0 0 40px rgba(0, 217, 255, 0.3);
+    /* Removing background clip to use solid color as requested */
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
+    animation: none;
 }
 
 .hero-title {
@@ -689,7 +701,7 @@ body {
 
 .capability-card h3 {
     font-family: var(--font-heading);
-    background: var(--gradient-primary);
+    background: #00E5FF;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -744,12 +756,12 @@ body {
 }
 
 .project-card:hover {
-    transform: rotateX(-8deg) rotateY(8deg) translateY(-20px);
+    transform: rotateX(5deg) translateY(-5px);
     box-shadow: 
-        0 40px 80px rgba(0, 217, 255, 0.3),
-        0 0 100px rgba(176, 38, 255, 0.2),
-        0 0 0 2px var(--color-primary),
-        inset 0 0 40px rgba(0, 217, 255, 0.1);
+        0 20px 40px rgba(0, 217, 255, 0.15),
+        0 0 50px rgba(176, 38, 255, 0.1),
+        0 0 0 1px var(--color-primary),
+        inset 0 0 20px rgba(0, 217, 255, 0.05);
     border-color: var(--color-primary);
 }
 
@@ -1157,6 +1169,39 @@ body {
     }
     
     .orbital-nav {
+        display: flex;
+        flex-direction: row;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 10px;
+        justify-content: space-around;
+        transform: none;
+        border-top: 1px solid rgba(0, 217, 255, 0.2);
+        z-index: 1000;
+        gap: 0;
+    }
+
+    .nav-orb {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        animation: none;
+    }
+
+    .nav-orb:hover {
+        transform: scale(1.1);
+        box-shadow: none;
+    }
+
+    .nav-orb::before {
         display: none;
     }
     
@@ -1177,7 +1222,8 @@ body {
     }
     
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
     
     .capabilities-grid {
@@ -1194,6 +1240,15 @@ body {
 }
 
 @media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem; /* Ensure vertical spacing */
+    }
+
+    .project-card {
+        margin-bottom: 1rem; /* Extra safety for spacing */
+    }
+
     .hero-name {
         font-size: 2rem;
     }
@@ -1206,4 +1261,37 @@ body {
         padding: 1rem;
         font-size: 0.85rem;
     }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    /* Certificates & Buttons Mobile Fixes */
+    .cert-card {
+        padding: 1rem;
+    }
+
+    .cert-actions .btn {
+        width: 100%;
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem; /* Larger text for readability */
+    }
+
+    .btn {
+        /* Increase touch target */
+        padding: 1rem 1.5rem;
+        min-height: 50px; 
+    }
+    
+    /* Disable complex hover effects on mobile */
+    .btn:hover, .project-card:hover, .cert-card:hover {
+        transform: none; 
+        box-shadow: none; /* Can keep subtle shadow if needed, but removing shift */
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
