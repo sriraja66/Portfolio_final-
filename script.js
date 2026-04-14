@@ -124,21 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
         terminalObserver.observe(termContainer);
     }
 
-    // 2. Email Matrix Animation
-    const emailContainer = document.getElementById('email-matrix');
-    if (emailContainer) {
-        const link = emailContainer.querySelector('a');
+    // 2. Matrix Reveal Animation (Email, GitHub, LinkedIn)
+    const matrixElements = document.querySelectorAll('.matrix-text');
+    matrixElements.forEach(container => {
+        const link = container.querySelector('a');
         if (link) {
-            const matrix = new MatrixReveal(emailContainer, link.textContent);
+            const matrix = new MatrixReveal(container, link.textContent);
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
                     matrix.reveal();
                     observer.disconnect();
                 }
             }, { threshold: 0.5 });
-            observer.observe(emailContainer);
+            observer.observe(container);
         }
-    }
+    });
 
     // 3. Footer Year
     const year = document.getElementById('current-year');
